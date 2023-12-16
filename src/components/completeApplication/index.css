@@ -1,0 +1,29 @@
+.GameEndCardContainer {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/match-game-bg.png');
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.innerContainer {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/match-game-score-card-lg-bg.png');
+  background-size: cover;
+  height: 90%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.trophyStyling {
+  height: 110px;
+  width: 110px;
+  margin-top: 10px;
+}
+
+.heading {
+  color: 'white';
+  font-size: 40px;
+}
