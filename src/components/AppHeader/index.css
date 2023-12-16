@@ -2,4 +2,12 @@
   height: '60px';
   background-color: #2c0e3a;
   color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  box-sizing: content-box;
+  padding-left: 10px;
+  padding-right: 30px;
 }
