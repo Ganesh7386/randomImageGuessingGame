@@ -9,10 +9,12 @@ function EachTab(props) {
     selectAndChangeTabId(activeTabId)
   }
   return (
-    <li>
+    <li className="eachTabContainer">
       <button
         onClick={handleChangeInActiveTabId}
-        className={isSelected ? 'selectedStyling' : 'unSelectedStyling'}
+        className={` ${
+          isSelected ? 'selectedStyling' : 'unSelectedStyling'
+        } eachTabbtnStyling `}
         type="button"
       >
         {displayText}
