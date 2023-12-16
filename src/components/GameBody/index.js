@@ -2,6 +2,8 @@ import {Component} from 'react'
 import EachTab from '../EachTab/index'
 import EachImage from '../eachImageComponent/index'
 
+import './index.css'
+
 class GameBody extends Component {
   state = {
     activeTabId: 'FRUIT',
@@ -31,7 +33,7 @@ class GameBody extends Component {
     const {thumbnailUrl} = imagesList[randomIndex]
     return (
       <img
-        style={{height: '100%', width: '100%'}}
+        style={{height: '90%', width: '40%'}}
         src={thumbnailUrl}
         alt="randomlyGeneratedImage"
       />
@@ -58,7 +60,7 @@ class GameBody extends Component {
       eachObj => eachObj.category === activeTabId,
     )
     return (
-      <ul>
+      <ul className="renderingImagesBasedOnIdContainer">
         {filteredImagesBasedOnCategory.map(eachObj => (
           <EachImage
             imageId={eachObj.id}
@@ -75,23 +77,33 @@ class GameBody extends Component {
     const {tabsList} = this.props
     const {activeTabId} = this.state
     return (
-      <div>
-        <div style={{height: '300px', width: '300px', padding: '30px'}}>
+      <div className="overAllGameBodyContainer">
+        <div className="randomImageContainer">
           {this.renderRandomlyGeneratedImage()}
         </div>
-        <ul>
-          {tabsList.map(eachObj => (
-            <EachTab
-              key={eachObj.id}
-              selectAndChangeTabId={this.selectAndChangeTabId}
-              eachTabDetails={eachObj}
-              activeTabId={eachObj.tabId}
-              id={eachObj.tabId}
-              isSelected={eachObj.tabId === activeTabId}
-            />
-          ))}
-        </ul>
-        <div>{this.renderAllImagesBasedOnTabId()}</div>
+        <div>
+          <ul className="allTabsListContainer">
+            {tabsList.map(eachObj => (
+              <EachTab
+                key={eachObj.tabId}
+                selectAndChangeTabId={this.selectAndChangeTabId}
+                eachTabDetails={eachObj}
+                activeTabId={eachObj.tabId}
+                id={eachObj.tabId}
+                isSelected={eachObj.tabId === activeTabId}
+              />
+            ))}
+          </ul>
+        </div>
+        <div
+          style={{
+            backgroundColor: 'orange',
+            display: 'flex',
+            justifyContent: 'center',
+          }}
+        >
+          {this.renderAllImagesBasedOnTabId()}
+        </div>
       </div>
     )
   }
