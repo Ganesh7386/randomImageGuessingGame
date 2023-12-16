@@ -50,12 +50,13 @@ class CompleteApplication extends Component {
   reduceTimer = () => {
     this.timerId = setInterval(() => {
       const {timeInSeconds} = this.state
-      this.setState(prevState => ({
-        timeInSeconds: prevState.timeInSeconds - 1,
-      }))
-      if (timeInSeconds === 1) {
+      if (timeInSeconds === 0) {
         clearInterval(this.timerId)
         this.setState({isGameOver: true})
+      } else {
+        this.setState(prevState => ({
+          timeInSeconds: prevState.timeInSeconds - 1,
+        }))
       }
     }, 1000)
   }
