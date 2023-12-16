@@ -1,7 +1,23 @@
 .selectedStyling {
-  border-bottom: 2px solid blue;
+  border: 4px solid yellow;
+  color: yellow;
 }
 
 .unSelectedStyling {
   border: none;
+}
+
+.eachTabContainer {
+  height: 150px;
+  width: 150px;
+  margin-left: 5px;
+}
+
+.eachTabbtnStyling {
+  height: 50%;
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  color: white;
+  border: 2px solid red;
 }
