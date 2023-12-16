@@ -1,5 +1,11 @@
 import './index.css'
 
+const headerLogoUrl =
+  'https://assets.ccbp.in/frontend/react-js/match-game-website-logo.png'
+
+const timerLogoUrl =
+  'https://assets.ccbp.in/frontend/react-js/match-game-timer-img.png'
+
 function Header(props) {
   const {score, timeInSeconds} = props
 
@@ -11,8 +17,55 @@ function Header(props) {
   }
   return (
     <div className="headerContainer">
-      <p>Score : {score}</p>
-      <p>Time : {renderTimeInSeconds()}</p>
+      <img
+        style={{height: '50px', width: '90px'}}
+        src={headerLogoUrl}
+        alt="website logo"
+      />
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          width: '200px',
+        }}
+      >
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <p>Score :</p>{' '}
+          <span
+            style={{
+              color: ' #fec653',
+              fontWeight: 'bold',
+              fontSize: '20px',
+              marginLeft: '5px',
+            }}
+          >
+            {score}
+          </span>
+        </div>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            fontWeight: 'bold',
+          }}
+        >
+          <img
+            src={timerLogoUrl}
+            alt="timer"
+            style={{height: '20px', width: '20px'}}
+          />
+          <p>{renderTimeInSeconds()} sec</p>
+        </div>
+      </div>
     </div>
   )
 }
