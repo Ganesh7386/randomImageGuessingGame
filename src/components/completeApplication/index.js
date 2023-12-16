@@ -34,11 +34,11 @@ class CompleteApplication extends Component {
   }
 
   render() {
-    const {timeInSeconds} = this.state
+    const {timeInSeconds, score} = this.state
     const {imagesList, tabsList} = this.props
     return (
       <div>
-        <Header timeInSeconds={timeInSeconds} />
+        <Header score={score} timeInSeconds={timeInSeconds} />
         <GameBody
           updateScore={this.updateScore}
           imagesList={imagesList}
