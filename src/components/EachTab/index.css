@@ -1,0 +1,7 @@
+.selectedStyling {
+  border-bottom: 2px solid blue;
+}
+
+.unSelectedStyling {
+  border: none;
+}
