@@ -6,7 +6,14 @@ function EachImage(props) {
   }
 
   return (
-    <li style={{height: '100px', width: '100px', listStyleType: 'none'}}>
+    <li
+      style={{
+        height: '100px',
+        width: '100px',
+        listStyleType: 'none',
+        margin: '5px',
+      }}
+    >
       <button
         type="button"
         className="eachImageButton"
