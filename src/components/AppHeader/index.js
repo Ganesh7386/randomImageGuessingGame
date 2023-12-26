@@ -9,11 +9,28 @@ const timerLogoUrl =
 function Header(props) {
   const {score, timeInSeconds} = props
 
-  const renderTimeInSeconds = () => {
-    if (timeInSeconds < 10) {
+  const renderTimeInMinAndSecs = () => {
+    const minutes = Math.floor(timeInSeconds/60);
+    const seconds = Math.floor(timeInSeconds%60);
+    let renderedMinutes , renderedSeconds
+    if(minutes < 10) {
+      renderedMinutes = `0${minutes}`
+    }
+    else{
+      renderedMinutes = `${minutes}`
+    }
+    if(seconds < 10) {
+      renderedSeconds = `0${seconds}`
+    }
+    else {
+      renderedSeconds = `${seconds}`;
+    }
+
+    /*if (timeInSeconds < 10) {
       return `0${timeInSeconds}`
     }
-    return `${timeInSeconds}`
+    return `${timeInSeconds}` */
+    return `${renderedMinutes} : ${renderedSeconds}`
   }
   return (
     <div className="headerContainer">
@@ -63,7 +80,7 @@ function Header(props) {
             alt="timer"
             style={{height: '20px', width: '20px'}}
           />
-          <p>{renderTimeInSeconds()} sec</p>
+          <p>{renderTimeInMinAndSecs()} sec</p>
         </div>
       </div>
     </div>

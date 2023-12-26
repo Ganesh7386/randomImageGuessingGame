@@ -7,7 +7,7 @@ import './index.css'
 
 class CompleteApplication extends Component {
   state = {
-    timeInSeconds: 60,
+    timeInSeconds: 120,
     score: 0,
     isGameOver: false,
   }
@@ -23,7 +23,7 @@ class CompleteApplication extends Component {
   }
 
   restartingWhenGameOver = () => {
-    this.setState({timeInSeconds: 60, score: 0, isGameOver: false})
+    this.setState({timeInSeconds: 120, score: 0, isGameOver: false})
     this.reduceTimer()
   }
 
